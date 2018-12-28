@@ -22,7 +22,7 @@ fields:
     description: The image displayed above the page content
     fields:
       - type: boolean
-        name: eanbled
+        name: enabled
         label: Display Content Image
         description: Displays the page content image
         default: false

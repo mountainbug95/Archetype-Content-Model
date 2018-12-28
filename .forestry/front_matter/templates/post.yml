@@ -30,7 +30,7 @@ fields:
     description: The image displayed above the post content
     fields:
       - type: boolean
-        name: eanbled
+        name: enabled
         label: Display Content Image
         description: Displays the post content image
         default: false
