@@ -1,0 +1,61 @@
+<!-- Footer -->
+<footer id="footer">
+    <div class="content">
+        <div class="inner">
+            {% if site.footer.about.enabled %}
+                <section class="about">
+                    <h3>{{ site.footer.about.title }}</h3>
+                    {{ site.footer.about.text | markdownify }}
+                    {% if site.footer.about.actions %}
+                        <ul class="actions">
+                            {% for action in site.footer.about.actions %}
+                                <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.isc_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}">{{ action.label }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </section>
+            {% endif %}
+            {% if site.footer.contact_methods.enabled %}
+                {% if site.footer.contact_methods.methods_col1 %}
+                    <ul class="icons bulleted">
+                        {% for method in site.footer.contact_methods.methods_col1 %}
+                            {% if method.type == 'contact_with_text' or method.template == 'contact_with_text' %}
+                                <li class="icon {{ method.icon }}">
+                                    <h3>{{ method.title }}</h3>
+                                    <p>{{ method.text | newline_to_br }}</p>
+                                </li>
+                            {% elsif method.type == 'contact_with_link' or method.template == 'contact_with_link' %}
+                                <li class="icon {{ method.icon }}">
+                                    <h3>{{ method.title }}</h3>
+                                    <p><a href="{{ method.url }}">{{ method.text | newline_to_br }}</a></p>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if site.footer.contact_methods.methods_col2 %}
+                    <ul class="icons bulleted">
+                        {% for method in site.footer.contact_methods.methods_col2 %}
+                            {% if method.type == 'contact_with_text' or method.template == 'contact_with_text' %}
+                                <li class="icon {{ method.icon }}">
+                                    <h3>{{ method.title }}</h3>
+                                    <p>{{ method.text | newline_to_br }}</p>
+                                </li>
+                            {% elsif method.type == 'contact_with_link' or method.template == 'contact_with_link' %}
+                                <li class="icon {{ method.icon }}">
+                                    <h3>{{ method.title }}</h3>
+                                    <p><a href="{{ method.url }}">{{ method.text | newline_to_br }}</a></p>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    <p class="copyright">{% if site.footer.copyright.enabled %}{{ site.footer.copyright.text }}<br />{% endif %}
+        {% for item in site.menus.footer %}
+            <a href="{% assign expr_2 = item.url | starts_with: '#' %}{% if expr_2 %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.title }}</a>{% unless forloop.last %} | {% endunless %}
+        {% endfor %}
+    </p>
+</footer>

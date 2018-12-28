@@ -1,0 +1,16 @@
+<!-- Two -->
+<section id="{{ include.section.section_id }}" class="wrapper cta">
+    <div class="inner">
+        <header>
+            <h2>{{ include.section.title }}</h2>
+            {% if include.section.actions %}
+                <ul class="actions">
+                    {% for action in include.section.actions %}
+                        <li><a href="#" class="button big{% if button.is_primary %} primary{% endif %}{% if button.is_scrolly %} scrolly{% endif %}">{{ action.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </header>
+        {{ include.section.text | markdownify }}
+    </div>
+</section>

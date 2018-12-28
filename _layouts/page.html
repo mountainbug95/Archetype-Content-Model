@@ -1,0 +1,48 @@
+---
+layout: body
+---
+
+    <!-- Main -->
+    <section id="main" class="wrapper{% if page.sidebar.enabled %} sidebar {{ page.sidebar.side }}{% endif %}">
+        <div class="inner">
+            <header class="major">
+                <h2>{{ page.title }}</h2>
+                {{ page.subtitle | markdownify }}
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                {% if page.content_img.enabled %}
+                    <a href="{{ page.content_img.url | link | relative_url }}" class="image fit"><img src="{{ page.content_img.path | relative_url }}" alt="" /></a>
+                {% endif %}
+                {{ content }}
+            </div>
+            
+            {% if page.sidebar.enabled %}
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    
+                    {% assign arr = site.posts | where_exp: 'item', 'item.show_in_sidebar == true' | sort: 'date' | reverse %}
+                    {% for post in arr %}
+                        <section>
+                            {% if post.alt_img %}
+                                <a href="{{ post.url | relative_url }}" class="image fit"><img src="{{ post.alt_img | relative_url }}" alt="" /></a>
+                            {% endif %}
+                            <h3>{{ post.title }}</h3>
+                            {{ post.excerpt | markdownify }}
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="{{ post.url | relative_url }}" class="button">Learn More</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                        {% unless forloop.last %}
+                            <hr />
+                        {% endunless %}
+                    {% endfor %}
+                    
+                </div>
+            {% endif %}
+            
+        </div>
+    </section>

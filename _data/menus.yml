@@ -1,0 +1,34 @@
+---
+main:
+  - identifier: layouts
+    title: Page Layouts
+    url: '#'
+    weight: 2
+layouts:
+  - title: Left Sidebar
+    weight: 1
+    url: left-sidebar.html
+  - title: Right Sidebar
+    weight: 2
+    url: right-sidebar.html
+  - title: No Sidebar
+    weight: 3
+    url: no-sidebar.html
+  - identifier: submenu
+    title: Submenu
+    weight: 4
+    url: '#'
+submenu:
+  - title: Option One
+    weight: 1
+    url: '#'
+  - title: Option Two
+    weight: 2
+    url: '#'
+  - title: Option Three
+    weight: 3
+    url: '#'
+  - title: Option Four
+    weight: 4
+    url: '#'
+---
