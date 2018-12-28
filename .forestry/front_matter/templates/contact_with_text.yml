@@ -22,6 +22,7 @@ fields:
     label: Method Icon
     description: (Font Awesom icon) The icon displayed beside the method title
   - type: textarea
-    name: Method Description
+    name: text
+    label: Method Description
     config:
       required: true
