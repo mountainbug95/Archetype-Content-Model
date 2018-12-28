@@ -24,19 +24,16 @@ footer:
           Suite 5432  
           Nashville, TN 00000
         type: contact_with_text
-        template: contact_with_text
     methods_col2:
       - title: Phone
         icon: fa-phone
         text: (000) 000-0000
         type: contact_with_text
-        template: contact_with_text
       - title: Email
         icon: fa-envelope-o
         text: information@untitled.tld
         url: '#'
         type: contact_with_link
-        template: contact_with_link
   copyright:
     enabled: true
     text: '&copy; Untitled. All rights reserved.'

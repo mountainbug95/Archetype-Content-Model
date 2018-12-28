@@ -44,7 +44,6 @@ sections:
           consectetur. Morbi libero orci, consectetur in odio maximus felis.
     component: features.html
     type: features
-    template: features
   - section_id: cta
     title: Ultrices ante sagittis nunc senectus libero netus
     actions:
@@ -61,13 +60,11 @@ sections:
       lorem feugiat. In fringilla diet consectetur.
     component: cta.html
     type: cta
-    template: cta
   - section_id: posts
     title: Convallis amet interdum
     subtitle: Sed magna in pharetra ultricies dolor sit amet consequat adipiscing lorem.
     component: posts.html
     type: posts
-    template: posts
 menus:
   main:
     title: Home
